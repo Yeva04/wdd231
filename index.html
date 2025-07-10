@@ -1,9 +1,77 @@
-<!doctype html>
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course home page for WDD231 showcasing projects and certificates">
+    <meta name="author" content="Your Name">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+     <nav>
+        <div class="logo">
+            <img src="images/icon2.svg" alt="Site Logo" width="85" height="70">
+        </div>
+        <span>Favour Ojobor Ogayicha</span>
+        <button class="hamburger">☰</button>
+       
+            <ul class="nav-menu">
+                <li><a href="index.html"> <b>HOME</b></a></li>
+                <li><a href="chamber.html"><b>CHAMBER</b></a></li>
+                <li><a href="final.html"><b>FINAL</b></a></li>
+                <span class="close-menu">X</span>
+            </ul>  
 
-    </head>
-    <body>
-        
-    </body>
+             
+        </nav>
+    
+    <main>
+        <h1>Home</h1>
+        <section class="about">
+            <header> <h2>About Me</h2></header>
+            <p>I am a computer science student, a tech enthusiast and an aspiring master in cyber security.
+                My world revolves around problem solving, coding, gaming, creating awareness of cyber fraud and preventions, creating digital arts/Graphic design, social media and affiliate marketing. </p>
+        </section>
+        <section class="photo">
+            <header><h2>Student Photo</h2></header>
+            <div class="photo-placeholder"><img src="images/yeva.jpeg" alt="yeva" height="299" width="255"></div>
+        </section>
+        <section class="courses">
+          <header>  <h2>Web Certificate Courses</h2></header>
+            <div class="filter-buttons">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('wdd')">WDD</button>
+                <button onclick="filterCourses('cse')">CSE</button>
+            </div>
+            <div id="course-list">
+                <div class="course-card">WDD 130</div>
+                <div class="course-card">WDD 231</div>
+                <div class="course-card">WDD 331</div>
+                <div class="course-card">CSE 110</div>
+                <div class="course-card">CSE 131</div>
+                <div class="course-card">WDD 231</div>
+                <div class="course-card">WDD 331</div>
+            </div>
+            <p>The total credits for course listed is: <span id="total-credits">6</span></p>
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+           
+<a href="https://github.com/yeva04"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/github.png" alt="GitHub" /></a>
+<a href="https://www.linkedin.com/in/ojoborfavour"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/linkedin.png" alt="LinkedIn" /></a>
+
+
+        </div>
+        <p>© <span id="current-year"></span> Favour Ojobor, Nigeria</p>
+         Last Modified <p id="lastModified"></p>
+    </footer>
+</body>
 </html>

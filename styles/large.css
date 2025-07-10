@@ -1,0 +1,100 @@
+@media screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-around;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+    }
+
+   .nav-menu li a {
+        padding: 0.3rem; /* Reduced from 0.5rem */
+        font-size: 0.9rem; /* Reduced for compactness */
+    }
+
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 0.5rem;
+        margin-top:5px;
+    }
+
+    .about {
+        grid-column: 1;
+    }
+
+    .photo {
+        grid-column: 2;
+    }
+
+    .courses {
+        grid-column: 1 / span 2;
+    }
+
+     .logo img {
+        width: 85px;
+        height: 70px;
+        border-radius: 10px; /* Consistent with small.css */
+    }
+
+    .photo-placeholder {
+        height: 250px;
+        width: 250px;
+    }
+    
+     .logo img:hover {
+        transform: scale(1.1);
+    }
+
+    
+     .about header h2, .photo header h2, .courses header h2 {
+        text-align: center !important;
+    }
+
+
+     .photo img{ /* Target specific other images */
+        width: 250px;
+        height: 250px;
+    }
+
+    .social-links img{
+  width: auto;
+  height: 40px;
+}
+
+    #course-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .course-card {
+        text-align: center;
+    }
+
+    .section-nav {
+        top: 40px; /* Adjusted to match reduced header height */
+    }
+
+footer {
+    background-color: #a80758;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    margin-top: 2rem;
+    height:130px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+ .close-menu {
+        display: none !important; /* Hide "X" on large screens */
+    }
+}

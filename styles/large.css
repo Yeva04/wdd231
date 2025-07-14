@@ -36,6 +36,8 @@
         grid-column: 1 / span 2;
     }
 
+
+
     .logo img {
         width: 85px;
         height: 70px;
@@ -46,9 +48,25 @@
         transform: scale(1.1);
     }
 
-    .about header h2, .photo header h2, .courses header h2 {
+    .about header h3, .photo header h3, .courses header h3 {
         text-align: center !important;
+        display: block;
+        margin: 0 auto;
+        padding: 0.5rem;
+        position: relative;
+        z-index: 800; /* Ensure headers are below nav */
     }
+    
+    
+    .about, .photo, .courses {
+        background-color: #fff;
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        position: relative;
+        z-index: 800; /* Match headers */
+    }
+
 
     .photo-placeholder {
         height: 250px;

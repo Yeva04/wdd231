@@ -137,7 +137,9 @@ main {
     display: block;
     margin: 0 auto;
     padding: 0.5rem;
-    height: 60px;
+    height: 50px;
+    position: relative;
+    z-index: 800; /* Ensure headers are below nav */
 }
 
 .about header, .photo header, .courses header  {
@@ -150,6 +152,9 @@ main {
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    position: relative;
+    z-index: 800; /* Match headers */
+
 }
 
 .photo-placeholder {

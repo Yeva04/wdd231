@@ -15,12 +15,14 @@ body {
 header {
     background-color: #a80758;
     color: white;
-    padding: 0.1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
+    position: sticky;
     top: 0;
     z-index: 1000;
-    height: 40px;
+    height: 100px;
+    
 }
 
 .logo img {
@@ -34,7 +36,6 @@ header {
     transform: scale(1.1); 
 }
 
-
 .hamburger {
     font-size: 1.5rem;
     background: none;
@@ -42,19 +43,13 @@ header {
     color: white;
     cursor: pointer;
     display: block;
+    margin-left: auto;
+    padding-left: 8rem;
 }
 
-nav{
-     background-color: #a80758;
-    color: white;
-    padding: 0.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    z-index: 1000;
-    height: 100px;
-    position: sticky;
+nav {
+    position: relative;
+    width: 100%;
 }
 
 .nav-menu {
@@ -62,10 +57,10 @@ nav{
     list-style: none;
     background-color: #a80758;
     position: absolute;
-    top: 40px;
-    left: 0;
+    top: 20px;
+    left: 0px;
     width: 100%;
-    padding: 0.1rem 0;
+    padding: 0.5rem 0;
 }
 
 .nav-menu.active {
@@ -75,9 +70,14 @@ nav{
 .nav-menu li a {
     color: white;
     text-decoration: none;
-    padding: 0.3rem 1rem;
+    padding: 0.5rem 0rem;
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+
+.nav-menu li a:hover, .nav-menu li a.active {
+    background-color: #c00;
+    border-radius: 6px;
 }
 
 .close-menu {
@@ -90,30 +90,27 @@ nav{
     background: none;
     border: none;
     cursor: pointer;
-    z-index:1001;
+    z-index: 1001;
 }
 
-.nav-menu.active{
-    display: block;
+.nav-menu.active + .close-menu {
+    display: block !important;
 }
 
-.close-menu{
-    display: block;
-}
 main {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap:0.5rem;
+    gap: 1rem;
     position: relative;
     margin-top: 5px;
 }
 
 .section-nav {
     background-color: #222;
-    padding: 0.3rem; /* Reduced from 0.5rem */
+    padding: 0.5rem;
     position: sticky;
-    top: 40px; /* Adjusted to match reduced header height */
+    top: 60px;
     z-index: 900;
 }
 
@@ -123,13 +120,11 @@ main {
     justify-content: space-around;
 }
 
-
-
 .section-nav a {
     color: white;
     text-decoration: none;
-    padding: 0.3rem; /* Reduced from 0.5rem */
-    font-size: 0.9rem; /* Reduced for compactness */
+    padding: 0.5rem;
+    font-size: 1rem;
 }
 
 .section-nav a.active {
@@ -137,16 +132,24 @@ main {
     border-radius: 5px;
 }
 
-.about header h2, .photo header h2, .courses header h2 {
+.about header h3, .photo header h3, .courses header h3 {
     text-align: center;
-    display: block; /* Ensure it behaves as a block for centering */
-    margin: 0 auto; /* Optional: Centers the block if width is set */
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem;
+    height: 60px;
 }
 
+.about header, .photo header, .courses header  {
+    border-radius: 6px;
+    height: 45px;
+    
+}
 .about, .photo, .courses {
     background-color: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .photo-placeholder {
@@ -157,57 +160,56 @@ main {
     margin-top: 1rem;
 }
 
-/*img{ 
-  width: 200px;
-  height: 200px;
- 
-} */
-
-.photo img { /* Target specific other images */
+.photo img {
     width: 200px;
-    height: 200px; 
+    height: 200px;
 }
 
-.social-links img{
-  width: auto;
-  height: 40px;
+.social-links img {
+    width: auto;
+    height: 40px;
 }
-
 
 .courses button {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #course-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
 }
-
 
 .course-card {
     background-color: #d56305;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    text-align: center;
 }
 
+.course-card.completed {
+    background-color: #25c40d;
+}
 
 footer {
     background-color: #a80758;
     color: white;
     text-align: center;
-    padding: 0.5rem 0.5rem; 
+    padding: 1rem;
     margin-top: 2rem;
-    height:130px;
+    height: 150px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    border-radius: 5px;
 }
 
 .social-links a {
-    margin: 0 0.3rem;
+    margin: 0 0.5rem;
 }
 
 #total-credits {

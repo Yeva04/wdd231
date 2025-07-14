@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Atoria Restaurant",
+        "address": "123 SPC, Nigeria",
+        "phone": "+234 123-456-7890",
+        "website": "https://g.co/kgs/7pi1QgY",
+        "image": "artoria.jpeg",
+        "membership": 3,
+        "other": "Restaurant & Sport lounge."
+    },
+    {
+        "name": "Vinmilan Restort",
+        "address": "456 oshimili, Nigeria",
+        "phone": "+234 987-654-3210",
+        "website": "https://vinmilanhotelandresort.com",
+        "image": "vinmilan.png",
+        "membership": 2,
+        "other": "Resort & Hospitality services"
+    },
+    {
+        "name": "Infinix Tech Cloud",
+        "address": "789 Asaba, Nigeria",
+        "phone": "+223 456-789-1234",
+        "website": "https://www.infinixtechcloud.com",
+        "image": "infinix.png",
+        "membership": 1,
+        "other": "E-learning"
+    },
+    {
+        "name": "Best Western Plus",
+        "address": "321 Asaba, Nigeria",
+        "phone": "+234 654-321-0987",
+        "website": "https://www.bestwesternelomazhotel.com",
+        "image": "elomaz.png",
+        "membership": 3,
+        "other": "Modern hotel, equipped with world best facilities."
+    },
+    {
+        "name": "Vienna International",
+        "address": "654 Asaba, Nigeria",
+        "phone": "+234 321-098-7654",
+        "website": "https://viennainternationalhotel.com",
+        "image": "vienna.jpeg",
+        "membership": 2,
+        "other": "Hospitality services"
+    },
+    {
+        "name": "PWAN Homes",
+        "address": "987 Asaba, Nigeria",
+        "phone": "+223 789-123-4567",
+        "website": "https://www.pwanhomes.com/",
+        "image": "pwan.png",
+        "membership": 1,
+        "other": "Property administration services"
+    },
+    {
+        "name": "Zoe Associate Nigeria Company",
+        "address": "147 Asaba, Nigeria",
+        "phone": "+234 234-567-8901",
+        "website": "https://zoeassociatenigcompany.website.com",
+        "image": "zoe.png",
+        "membership": 3,
+        "other": "Real estate services"
+    }
+]

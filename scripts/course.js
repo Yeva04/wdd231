@@ -15,13 +15,17 @@ function filterCourses(category) {
 
     filteredCourses.forEach(course => {
         const div = document.createElement('div');
-        div.className = 'course-card';
-        div.textContent = course.code;
-        if (course.completed) {
-            div.style.backgroundColor = '#e0f7fa';
-        }
+        div.className = 'course-card' + (course.completed ? ' completed' : '');
+        div.textContent = `${course.code} (${course.title})`;
         courseList.appendChild(div);
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => filterCourses('all'));
+document.addEventListener('DOMContentLoaded', () => {
+    filterCourses('all');
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            filterCourses(button.getAttribute('data-category'));
+        });
+    });
+});

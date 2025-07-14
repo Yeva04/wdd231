@@ -4,74 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Course home page for WDD231 showcasing projects and certificates">
-    <meta name="author" content="Your Name">
-    <title>Home</title>
+    <meta name="author" content="Favour Ojobor">
+    <meta name="keywords" content="web development, courses, cyber security, portfolio">
+    <title>Home - Favour Ojobor</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
 </head>
 <body>
-     <nav>
+    <header>
         <div class="logo">
-            <img src="images/icon2.svg" alt="Site Logo" width="85" height="70">
+            <img src="images/icon2.svg" alt="Site Logo" width="85" height="70" loading="lazy">
         </div>
         <span>Favour Ojobor Ogayicha</span>
         <button class="hamburger">☰</button>
-       
+        <nav>
             <ul class="nav-menu">
-                <li><a href="index.html"> <b>HOME</b></a></li>
-                <li><a href="chamber.html"><b>CHAMBER</b></a></li>
-                <li><a href="final.html"><b>FINAL</b></a></li>
-                <span class="close-menu">X</span>
-            </ul>  
-
-             
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="chamber.html">CHAMBER</a></li>
+                <li><a href="final.html">FINAL</a></li>
+            </ul>
+            <span class="close-menu">X</span>
         </nav>
-    
+    </header>
     <main>
-        <h1>Home</h1>
+        <h2>Home</h2>
         <section class="about">
-            <header> <h2>About Me</h2></header>
+            <header><h3>About Me</h3></header>
             <p>I am a computer science student, a tech enthusiast and an aspiring master in cyber security.
-                My world revolves around problem solving, coding, gaming, creating awareness of cyber fraud and preventions, creating digital arts/Graphic design, social media and affiliate marketing. </p>
+                My world revolves around problem solving, coding, gaming, creating awareness of cyber fraud and preventions, creating digital arts/Graphic design, social media and affiliate marketing.</p>
         </section>
         <section class="photo">
-            <header><h2>Student Photo</h2></header>
-            <div class="photo-placeholder"><img src="images/yeva.jpeg" alt="yeva" height="299" width="255"></div>
+            <header><h3>Student Photo</h3></header>
+            <div class="photo-placeholder"><img src="images/yeva.jpeg" alt="yeva" height="200" width="200" loading="lazy"></div>
         </section>
         <section class="courses">
-          <header>  <h2>Web Certificate Courses</h2></header>
+            <header><h3>Web Certificate Courses</h3></header>
             <div class="filter-buttons">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('wdd')">WDD</button>
-                <button onclick="filterCourses('cse')">CSE</button>
+                <button class="filter-btn" data-category="all">All</button>
+                <button class="filter-btn" data-category="wdd">WDD</button>
+                <button class="filter-btn" data-category="cse">CSE</button>
             </div>
-            <div id="course-list">
-                <div class="course-card">WDD 130</div>
-                <div class="course-card">WDD 231</div>
-                <div class="course-card">WDD 331</div>
-                <div class="course-card">CSE 110</div>
-                <div class="course-card">CSE 131</div>
-                <div class="course-card">WDD 231</div>
-                <div class="course-card">WDD 331</div>
-            </div>
-            <p>The total credits for course listed is: <span id="total-credits">6</span></p>
+            <div id="course-list"></div>
+            <p>The total credits for course listed is: <span id="total-credits">0</span></p>
         </section>
     </main>
     <footer>
         <div class="social-links">
-           
-<a href="https://github.com/yeva04"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/github.png" alt="GitHub" /></a>
-<a href="https://www.linkedin.com/in/ojoborfavour"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/linkedin.png" alt="LinkedIn" /></a>
-
-
+            <a href="https://github.com/yeva04"><img src="https://img.icons8.com/ios-filled/50/FFFFFF/github.png" alt="GitHub" height="20" width="20" loading="lazy"></a>
+            <a href="https://linkedin.com/in/ojobor-favour"><img src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png" alt="LinkedIn" height="20" width="20" loading="lazy"></a>
         </div>
         <p>© <span id="current-year"></span> Favour Ojobor, Nigeria</p>
-         Last Modified <p id="lastModified"></p>
+        <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
 </body>
 </html>

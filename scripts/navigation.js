@@ -16,11 +16,12 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Ensure closeMenu exists before adding event listener
 document.addEventListener('DOMContentLoaded', () => {
     if (closeMenu) {
         closeMenu.addEventListener('click', () => {
             navMenu.classList.remove('active');
         });
+    } else {
+        console.log("closeMenu element not found");
     }
 });

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add('business-card');
                 card.innerHTML = `
                     <h3>${member.name || 'No Name'}</h3>
-                    <img src="/chamber/images/${member.image || 'default.jpg'}" alt="${member.name || 'Member'} Logo" class="member-image" onerror="this.src='/chamber/images/default.jpg';">
+                    ${isGrid ? `<img src="/chamber/images/${member.image || 'default.jpg'}" alt="${member.name || 'Member'} Logo" class="member-image" onerror="this.src='/chamber/images/default.jpg';">` : ''}
                     <div class="details">
                         <p>Address: ${member.address || 'N/A'}</p>
                         <p>Phone: ${member.phone || 'N/A'}</p>

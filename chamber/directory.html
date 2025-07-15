@@ -12,36 +12,34 @@
     <meta property="og:description" content="Explore the directory of businesses and organizations in Asaba.">
     <meta property="og:image" content="https://yeva04.github.io/wdd231/chamber/images/chamber.webp">
     <meta property="og:url" content="https://yeva04.github.io/wdd231/chamber/directory.html">
-    <!-- Normalize CSS -->
+    <!-- Normalize CSS and Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" type="text/css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <nav>
         <div class="logo">
-            <img src="/chamber/images/chamber.webp" alt="Asaba Chamber Logo" width="85" height="70">
+            <img src="./images/chamber.webp" alt="Asaba Chamber Logo" width="85" height="70">
         </div>
-        <button class="hamburger">☰</button>
+        <button id="menu-toggle" class="hamburger">☰</button>
         <ul class="nav-menu">
             <li><a href="index.html"><b>HOME</b></a></li>
             <li><a href="directory.html"><b>DIRECTORY</b></a></li>
             <li><a href="join.html"><b>JOIN</b></a></li>
             <li><a href="discover.html"><b>DISCOVER</b></a></li>
-            <span class="close-menu">X</span>
         </ul>
     </nav>
     <main>
-        <h2>Directory</h2>
+        <h1>Asaba Chamber of Commerce - Directory</h1>
         <div class="weather-sections">
             <section class="events">
-                <header><h3>Events</h3></header>
-                <ol> 
-                <li>Delta state women affairs.</li>
-                <li>WESAP.</li>
-                
+                <h3>Upcoming Events</h3>
+                <ol>
+                    <li>Delta state women affairs.</li>
+                    <li>WESAP.</li>
                 </ol>
-               
-
             </section>
             <section class="weather-current">
                 <h3>Current Weather</h3>
@@ -49,20 +47,23 @@
             </section>
             <section class="weather-forecast">
                 <h3>Weather Forecast</h3>
-                 <p id="weather-forecast">Loading...</p>
+                <p id="weather-forecast">Loading...</p>
             </section>
         </div>
-        <section class="business-directory grid" id="business-directory">
+        <section class="business-directory" id="business-directory">
+            <h2>Business Listings</h2>
             <!-- Member cards will be populated by JavaScript as grid by default -->
         </section>
         <section class="directory-controls">
-            <button id="view-toggle">Switch to List View</button>
+            <h3>View Options</h3>
+            <label><input type="radio" name="view-option" value="grid" checked> Grid View</label>
+            <label><input type="radio" name="view-option" value="list"> List View</label>
         </section>
     </main>
     <footer>
-        <p>© <span id="current-year"></span> Asaba Chamber Commerce | Asaba Delta, Nigeria | <a href="mailto:yevtechnexus@gmail.com">Asaba Commerce</a> | <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a></p>
+        <p>© <span id="current-year"></span> Asaba Chamber Commerce | Asaba Delta, Nigeria | <a href="mailto:yevtechnexus@gmail.com" title="Email: yevtechnexus@gmail.com">Contact</a> | <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a></p>
         <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
     </footer>
-     <script src="/chamber/scripts/weather.js"></script> <!-- Weather and forecast script -->
+    <script src="/chamber/scripts/weather.js"></script>
     <script src="/chamber/scripts/member.js"></script>
 </html>

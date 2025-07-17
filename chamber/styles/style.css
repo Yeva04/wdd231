@@ -103,7 +103,7 @@ nav {
     background-color: #f9f9f9;
     margin-top: 2rem;
     text-align: center;
-    flex-direction: horizontal;
+    flex-direction: row;
     align-items: center;
 }
 

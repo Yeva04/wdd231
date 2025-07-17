@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asaba Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the official Asaba Chamber of Commerce. Connect, grow, and explore local opportunities.">
+    <meta name="author" content="Favour Ojobor">
+
+    <!-- Facebook Open Graph Meta Tags --> 
+    <meta property="og:title" content="Asaba Chamber of Commerce - Home">
+    <meta property="og:description" content="Join the Asaba Chamber and connect with our vibrant business community.">
+    <meta property="og:url" content="https://yeva04.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://yeva04.github.io/wdd231/chamber/images/chamber.webp">
+    
+    <link rel="icon" type="image/x-icon" href="/chamber/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    
+    <!-- Google Fonts with preconnect and single reference -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" crossorigin>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="./images/chamber.webp" alt="Asaba Chamber Logo" width="85" height="70">
+        </div>
+        <button id="menu-toggle" class="hamburger">☰</button>
+        <ul class="nav-menu">
+            <li><a href="index.html"><b>HOME</b></a></li>
+            <li><a href="directory.html"><b>DIRECTORY</b></a></li>
+            <li><a href="join.html"><b>JOIN</b></a></li>
+            <li><a href="discover.html"><b>DISCOVER</b></a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Asaba Chamber of Commerce - Home</h1>
+        <section class="hero">
+    <img src="./images/local.jpg" alt="Asaba Chamber Hero Image">
+    <div class="hero-text">
+        <h2>Empowering Local Business</h2>
+        <a href="join.html" class="cta-button">Join the Chamber</a>
+    </div>
+</section>
+ 
+        <!-- Events Section -->
+    <div class="weather-sections">
+    <section class="events">
+      <h3>Upcoming Events</h3>
+      <ul>
+        <li>August 20 - Asaba Business Roundtable</li>
+        <li>September 5 - Delta Women Entrepreneurs Meetup</li>
+        <li>September 22 - Chamber Networking Night</li>
+      </ul>
+    </section>
+
+      <section class="weather-current">
+        <h3>Current Weather</h3>
+        <p id="current-weather">Loading current weather...</p>
+      </section>
+      <section class="weather-forecast">
+        <h3>Weather Forecast</h3>
+        <p id="weather-forecast">Loading forecast...</p>
+      </section>
+    </div>
+
+    <!-- Spotlight Section -->
+    <section class="spotlights" id="spotlights">
+      <h2>Member Spotlights</h2>
+      <!-- Spotlight cards will be populated by JS -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="current-year"></span> Asaba Chamber Commerce | Asaba Delta, Nigeria | 
+      <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a>
+    </p>
+    <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/chamber/scripts/weather.js"></script>
+  <script src="/chamber/scripts/member.js"></script>
+  <script src="/chamber/scripts/spotlight.js"></script>
+
+  <script>
+       document.getElementById("current-year").textContent = new Date().getFullYear();
+    document.getElementById("last-modified").textContent = document.lastModified;
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.querySelector(".nav-menu").classList.toggle("active");
+    });
+  </script>
+
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+   

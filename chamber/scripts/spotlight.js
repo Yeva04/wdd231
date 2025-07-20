@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/members.json')
+    fetch('./data/members.json')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'spotlight-card';
                 card.innerHTML = `
-                    <img src="./images/${member.image}" alt="${member.name}">
+                    <img src="images/${member.image}" alt="${member.name}">
                     <h3>${member.name}</h3>
                     <p>${member.address}</p>
                     <p>${member.phone}</p>

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchMembers() {
         try {
-            const response = await fetch('./data/members.json');
+            const response = await fetch('data/members.json');
             if (!response.ok) throw new Error('Network response was not ok');
             membersData = await response.json();
             console.log('Members fetched:', membersData.length, 'items');

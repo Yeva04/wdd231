@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You - Asaba Chamber</title>
-  <meta name="description" content="Thank you for joining the Asaba Chamber of Commerce." />
-  <meta name="author" content="Favour Ojobor" />
-  <link rel="icon" href="/chamber/images/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
+  <meta name="description" content="Thank you for joining the Asaba Chamber of Commerce.">
+  <meta name="author" content="Favour Ojobor">
+  
+      <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Asaba Chamber of Commerce - Directory">
+    <meta property="og:description" content="Explore the directory of businesses and organizations in Asaba.">
+    <meta property="og:image" content="https://yeva04.github.io/wdd231/chamber/images/chamber.webp">
+    <meta property="og:url" content="https://yeva04.github.io/wdd231/chamber/directory.html">
+    
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  <header>
     <div class="logo">
-      <img src="./images/chamber.webp" alt="Asaba Chamber Logo" />
+      <img src="./images/chamber.webp" alt="Asaba Chamber Logo" width="85" height="70">
     </div>
-    <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <ul class="nav-menu" role="menu">
-      <li><a href="index.html" role="menuitem">HOME</a></li>
-      <li><a href="directory.html" role="menuitem">DIRECTORY</a></li>
-      <li><a href="join.html" role="menuitem">JOIN</a></li>
-      <li><a href="discover.html" role="menuitem">DISCOVER</a></li>
+    <button id="menu-toggle" class="hamburger">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html"><b>HOME</b></a></li>
+      <li><a href="directory.html"><b>DIRECTORY</b></a></li>
+      <li><a href="join.html"><b>JOIN</b></a></li>
+      <li><a href="discover.html"><b>DISCOVER</b></a></li>
     </ul>
-  </nav>
+  </header>
 
   <main>
     <h1>Thank You for Joining!</h1>
@@ -38,5 +45,45 @@
     <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
   </footer>
 
-  <script src="./scripts/thankyou.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById('last-modified').textContent = document.lastModified;
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      let data = {
+        firstName: params.get('fname') || 'Not provided',
+        lastName: params.get('lname') || 'Not provided',
+        email: params.get('email') || 'Not provided',
+        phone: params.get('phone') || 'Not provided',
+        businessName: params.get('orgname') || 'Not provided',
+        timestamp: params.get('timestamp') || new Date().toISOString()
+      };
+
+      const confirmation = document.getElementById('confirmation');
+      if (confirmation) {
+        confirmation.innerHTML = `
+          <div class="business-card">
+            <div class="details">
+              <p><strong>First Name:</strong> ${data.firstName}</p>
+              <p><strong>Last Name:</strong> ${data.lastName}</p>
+              <p><strong>Email:</strong> ${data.email}</p>
+              <p><strong>Mobile Number:</strong> ${data.phone}</p>
+              <p><strong>Business Name:</strong> ${data.businessName}</p>
+              <p><strong>Submitted On:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+            </div>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
 </html>

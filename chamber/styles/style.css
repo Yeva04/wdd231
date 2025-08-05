@@ -11,7 +11,19 @@ body {
     background-color: #f4f4f4;
     margin: 0;
 }
+header{
 
+    background-color: #a80758;
+    color: white;
+    padding: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 100px;
+}
 nav {
     background-color: #a80758;
     color: white;
@@ -512,11 +524,6 @@ form.join-form input[type="submit"]:hover {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* New style for centered summary text */
-.summary-text {
-    text-align: center;
 }
 
 .business-card {

@@ -308,6 +308,9 @@ footer {
 @media screen and (max-width: 767px) {
     #menu-toggle {
         display: block;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin-right: 2rem;
     }
     .nav-menu {
         display: none;

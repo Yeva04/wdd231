@@ -52,10 +52,13 @@ nav {
     width: auto;
     gap: 1.5rem;
 }
-.nav-menu li a:hover, .nav-menu li a.active {
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
     background-color: #FF69B4;
     border-radius: 6px;
 }
+
 .nav-menu li a {
     color: white;
     text-decoration: none;
@@ -69,11 +72,13 @@ nav {
     height: 390px;
     overflow: hidden;
 }
+
 .hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .hero-text {
     position: absolute;
     top: 50%;
@@ -84,6 +89,7 @@ nav {
     color: white;
     border-radius: 10px;
 }
+
 .cta-button {
     display: inline-block;
     margin-top: 1rem;
@@ -93,10 +99,10 @@ nav {
     text-decoration: none;
     border-radius: 6px;
 }
+
 .spotlights {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
@@ -107,7 +113,6 @@ nav {
     align-items: center;
 }
 
-
 .spotlights h2 {
     width: 100%;
     font-size: 1.8rem;
@@ -116,13 +121,13 @@ nav {
 }
 
 .spotlight-card {
-   background: white;
+    background: white;
     border: 1px solid #ccc;
     padding: 1rem;
     max-width: 300px;
     min-width: 240px;
     text-align: center;
-    box-shadow: 5px 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.05);
     flex: 1 1 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
@@ -144,11 +149,9 @@ nav {
     transition: transform 0.3s ease;
 }
 
-
 .spotlight-card:hover img {
     transform: scale(1.1);
 }
-
 
 main {
     padding: 1rem;
@@ -163,9 +166,17 @@ h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
-h1 { color: #FF69B4; }
-h2 { color: #FF69B4; }
-h3 { margin-bottom: 0.5rem; }
+h1 {
+    color: #FF69B4;
+}
+
+h2 {
+    color: #FF69B4;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+}
 
 .weather-sections {
     display: flex;
@@ -269,6 +280,19 @@ footer {
     align-items: center;
 }
 
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Layouts */
 @media screen and (max-width: 767px) {
     #menu-toggle {
         display: block;
@@ -299,6 +323,12 @@ footer {
     .business-card {
         min-height: auto;
     }
+    .join-container {
+        flex-direction: column;
+    }
+    .membership-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -312,4 +342,186 @@ footer {
     .business-directory {
         grid-column: 1 / span 2;
     }
+    .join-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .join-form {
+        flex: 1;
+        max-width: 400px;
+    }
+    .membership-cards {
+        flex: 1;
+        max-width: 400px;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Join Page Styles === */
+.join-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+form.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form.join-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #333;
+}
+
+form.join-form input,
+form.join-form select,
+form.join-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+form.join-form input:focus,
+form.join-form select:focus,
+form.join-form textarea:focus {
+    border-color: #FF69B4;
+    outline: none;
+}
+
+form.join-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form.join-form input[type="submit"] {
+    background-color: #c2185b;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form.join-form input[type="submit"]:hover {
+    background-color: #a0154a;
+}
+
+.membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0;
+    max-width: 400px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #c2185b;
+}
+
+.card a.modal-trigger {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #FF69B4;
+    text-decoration: none;
+}
+
+.card a.modal-trigger:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 1.5rem;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    color: #c2185b;
+    margin-bottom: 1rem;
+}
+
+.modal-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-content .close:hover {
+    color: #FF69B4;
+}
+
+.confirmation-card {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* New style for centered summary text */
+.summary-text {
+    text-align: center;
+}
+
+.business-card {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }

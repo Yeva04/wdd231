@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Asaba Chamber</title>
+  <meta name="description" content="Thank you for joining the Asaba Chamber of Commerce." />
+  <meta name="author" content="Favour Ojobor" />
+  <link rel="icon" href="/chamber/images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="./images/chamber.webp" alt="Asaba Chamber Logo" />
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-menu" role="menu">
+      <li><a href="index.html" role="menuitem">HOME</a></li>
+      <li><a href="directory.html" role="menuitem">DIRECTORY</a></li>
+      <li><a href="join.html" role="menuitem">JOIN</a></li>
+      <li><a href="discover.html" role="menuitem">DISCOVER</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Thank You for Joining!</h1>
+    <p class="summary-text">We’ve received your membership application. Below is a summary of your submission:</p>
+    <div id="confirmation" class="confirmation-card"></div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Asaba Chamber Commerce | Asaba Delta, Nigeria | <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a></p>
+    <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
+  </footer>
+
+  <script src="./scripts/thankyou.js"></script>
+</html>

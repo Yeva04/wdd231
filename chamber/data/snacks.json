@@ -1,0 +1,19 @@
+{
+    "snacks": [
+        { "id": 1, "name": "Conflakes", "price": 2.00, "description": "Classic conflakes", "image": "Cereal2.jpg", "availability": true },
+        { "id": 2, "name": "Rice Krispies", "price": 2.00, "description": "Crispy rice cereal", "image": "rice cripsy8.jpg", "availability": true },
+        { "id": 3, "name": "Coco Pops", "price": 2.00, "description": "Chocolate cereal", "image": "coco pop3.jpg", "availability": true },
+        { "id": 4, "name": "Jollof Rice", "price": 5.00, "description": "Spicy rice dish", "image": "jellof5.jpg", "availability": true },
+        { "id": 5, "name": "Fried Rice", "price": 6.00, "description": "Fried rice with veggies", "image": "frieddrice.jpg", "availability": true },
+        { "id": 6, "name": "Garnished Chicken", "price": 7.00, "description": "Chicken with garnish", "image": "chicken-garnish7.jpg", "availability": true },
+        { "id": 7, "name": "Amala n Soup", "price": 10.00, "description": "Amala with soup", "image": "ama.jpg", "availability": true },
+        { "id": 8, "name": "FruitMix", "price": 4.00, "description": "Mixed fruits", "image": "veggggggieat.jpg", "availability": true },
+        { "id": 9, "name": "Egusi", "price": 8.00, "description": "Egusi soup", "image": "egusi food2.jpg", "availability": true },
+        { "id": 10, "name": "Ogbono", "price": 6.00, "description": "Ogbono soup", "image": "ogbono soup2.jpg", "availability": true },
+        { "id": 11, "name": "Plantain", "price": 5.00, "description": "Fried plantain", "image": "plantain.jpg", "availability": true },
+        { "id": 12, "name": "Beans", "price": 6.00, "description": "Cooked beans", "image": "Beans.jpg", "availability": true },
+        { "id": 13, "name": "Yam n'Egg", "price": 6.00, "description": "Yam with egg", "image": "yam n egg.jpg", "availability": true },
+        { "id": 14, "name": "Chocolate Cake", "price": 9.00, "description": "Rich chocolate cake", "image": "chocolatee cake.jpg", "availability": true },
+        { "id": 15, "name": "Cup Cake", "price": 3.00, "description": "Fluffy cupcakes", "image": "cupcake4.jpg", "availability": true }
+    ]
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Asaba Chamber</title>
+  <meta name="description" content="Apply to join the Asaba Chamber of Commerce." />
+  <meta name="author" content="Favour Ojobor" />
+  <link rel="icon" href="/chamber/images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="./images/chamber.webp" alt="Asaba Chamber Logo" />
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-menu" role="menu">
+      <li><a href="index.html" role="menuitem">HOME</a></li>
+      <li><a href="directory.html" role="menuitem">DIRECTORY</a></li>
+      <li><a href="join.html" class="active" role="menuitem">JOIN</a></li>
+      <li><a href="discover.html" role="menuitem">DISCOVER</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Join the Chamber</h1>
+    <div class="join-container">
+      <form action="thankyou.html" method="get" class="join-form">
+        <label for="fname">First Name:
+          <input type="text" id="fname" name="fname" title="Enter your first name" required autocomplete="given-name" />
+        </label>
+        <label for="lname">Last Name:
+          <input type="text" id="lname" name="lname" title="Enter your last name" required autocomplete="family-name" />
+        </label>
+        <label for="orgtitle">Title in Organization:
+          <input type="text" id="orgtitle" name="orgtitle" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" required />
+        </label>
+        <label for="email">Email:
+          <input type="email" id="email" name="email" title="Enter your email address" required autocomplete="email" placeholder="you@example.com" />
+        </label>
+        <label for="phone">Phone:
+          <input type="tel" id="phone" name="phone" title="Enter your mobile phone number" required autocomplete="tel" />
+        </label>
+        <label for="orgname">Organization Name:
+          <input type="text" id="orgname" name="orgname" title="Enter your business/organization name" required autocomplete="organization" />
+        </label>
+        <label for="membership">Membership Level:
+          <select id="membership" name="membership" title="Select your membership level" required>
+            <option value="" disabled selected>Select a level</option>
+            <option value="np">NP Membership (Non-Profit, No Fee)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+        <label for="description">Description of Organization:
+          <textarea id="description" name="description" title="Describe your organization"></textarea>
+        </label>
+        <input type="hidden" id="timestamp" name="timestamp" value="" />
+        <input type="submit" value="Apply for Membership" />
+      </form>
+
+      <section class="membership-cards" id="membership-cards">
+        <div class="card" data-modal="modal-np">
+          <h3>NP Membership</h3>
+          <p>No fee - ideal for non-profits.</p>
+          <a href="#" class="modal-trigger">View Benefits</a>
+        </div>
+        <div class="card" data-modal="modal-bronze">
+          <h3>Bronze</h3>
+          <p>$50/year - Basic benefits.</p>
+          <a href="#" class="modal-trigger">View Benefits</a>
+        </div>
+        <div class="card" data-modal="modal-silver">
+          <h3>Silver</h3>
+          <p>$100/year - Enhanced features.</p>
+          <a href="#" class="modal-trigger">View Benefits</a>
+        </div>
+        <div class="card" data-modal="modal-gold">
+          <h3>Gold</h3>
+          <p>$200/year - Premium access.</p>
+          <a href="#" class="modal-trigger">View Benefits</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal-np" class="modal">
+    <div class="modal-content">
+      <h2>NP Membership Benefits</h2>
+      <ul><li>Free event access</li><li>Community exposure</li></ul>
+      <span class="close">&times;</span>
+    </div>
+  </div>
+  <div id="modal-bronze" class="modal">
+    <div class="modal-content">
+      <h2>Bronze Membership Benefits</h2>
+      <ul><li>Event invitations</li><li>Member directory listing</li></ul>
+      <span class="close">&times;</span>
+    </div>
+  </div>
+  <div id="modal-silver" class="modal">
+    <div class="modal-content">
+      <h2>Silver Membership Benefits</h2>
+      <ul><li>Website spotlight</li><li>Discounted workshops</li></ul>
+      <span class="close">&times;</span>
+    </div>
+  </div>
+  <div id="modal-gold" class="modal">
+    <div class="modal-content">
+      <h2>Gold Membership Benefits</h2>
+      <ul><li>Exclusive events</li><li>Full advertising support</li></ul>
+      <span class="close">&times;</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Asaba Chamber | <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a></p>
+    <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
+  </footer>
+
+  <script>
+    // Handle timestamp, footer, and navigation toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById('last-modified').textContent = document.lastModified;
+      document.getElementById('timestamp').value = new Date().toISOString();
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+
+    // Modal functionality
+    document.querySelectorAll('.modal-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = trigger.closest('.card').getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'block';
+      });
+    });
+
+    document.querySelectorAll('.close').forEach(close => {
+      close.addEventListener('click', () => {
+        close.closest('.modal').style.display = 'none';
+      });
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Asaba - Asaba Chamber</title>
+  <meta name="description" content="Explore Asaba, Delta State, with the Asaba Chamber of Commerce. Learn about local attractions and demographics.">
+  <meta name="author" content="Favour Ojobor">
+  <!-- Facebook Open Graph Meta Tags -->
+  <meta property="og:title" content="Discover Asaba - Asaba Chamber of Commerce">
+  <meta property="og:description" content="Discover the vibrant city of Asaba with its attractions and business opportunities.">
+  <meta property="og:image" content="https://yeva04.github.io/wdd231/chamber/images/chamber.webp">
+  <meta property="og:url" content="https://yeva04.github.io/wdd231/chamber/discover.html">
+  <link rel="icon" href="/chamber/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="./images/chamber.webp" alt="Asaba Chamber Logo" width="85" height="70">
+    </div>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-menu" role="menu">
+      <li><a href="index.html" role="menuitem"><b>HOME</b></a></li>
+      <li><a href="directory.html" role="menuitem"><b>DIRECTORY</b></a></li>
+      <li><a href="join.html" role="menuitem"><b>JOIN</b></a></li>
+      <li><a href="discover.html" class="active" role="menuitem"><b>DISCOVER</b></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Discover Asaba</h1>
+    <section class="discover-grid">
+      <!-- Cards will be populated by JavaScript -->
+    </section>
+    <aside class="visit-message">
+      <p id="visit-info">Loading visit information...</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Asaba Chamber | Asaba Delta, Nigeria | <a href="#">YouTube</a> <a href="#">Twitter</a> <a href="#">LinkedIn</a></p>
+    <p>Last Modified: <span id="last-modified"></span> | Favour Ojobor, WDD 231</p>
+  </footer>
+
+  <script src="./scripts/discover.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById('last-modified').textContent = document.lastModified;
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      // Add active class dynamically
+      const currentPage = window.location.pathname.split('/').pop();
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

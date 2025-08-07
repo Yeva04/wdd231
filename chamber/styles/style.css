@@ -535,3 +535,113 @@ form.join-form input[type="submit"]:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
 }
+
+/* Discover Page Grid Layout */
+.discover-grid {
+  display: grid;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4"
+    "card5 card6"
+    "card7 card8";
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8";
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 .";
+  }
+}
+
+/* Card Styling */
+.discover-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.discover-card h2 {
+  color: #FF69B4;
+  margin-bottom: 0.5rem;
+}
+
+.discover-card address {
+  font-style: normal;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.discover-card p {
+  color: #666;
+}
+
+.discover-card button {
+  background-color: #c2185b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.discover-card button:hover {
+  background-color: #a0154a;
+}
+
+.discover-card figure img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Hover Effect for Desktop (no effect on mobile) */
+@media screen and (min-width: 1025px) {
+  .discover-card figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+/* Visit Message */
+.visit-message {
+  padding: 1rem;
+  background-color: #e9ecef;
+  margin-top: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}

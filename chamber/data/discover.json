@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Asaba River Beach",
+    "address": "Along River Niger, Asaba, Delta State",
+    "description": "A scenic riverside spot perfect for relaxation and picnics.",
+    "image": "images/beach.webp"
+  },
+  {
+    "name": "Otuogu Market",
+    "address": "Otuogu Road, Asaba, Delta State",
+    "description": "A bustling market offering local crafts and fresh produce.",
+    "image": "images/otuogu.webp"
+  },
+  {
+    "name": "Delta State Government House",
+    "address": "Asaba, Delta State",
+    "description": "An iconic building showcasing the state's governance history.",
+    "image": "images/govt_house.webp"
+  },
+  {
+    "name": "Asaba International Airport",
+    "address": "Asaba, Delta State",
+    "description": "A modern airport connecting Asaba to major cities.",
+    "image": "images/asaba_airport.webp"
+  },
+  {
+    "name": "Nnebisi Road",
+    "address": "Nnebisi Road, Asaba, Delta State",
+    "description": "A vibrant commercial hub with shops and eateries.",
+    "image": "images/nnebisi.webp"
+  },
+  {
+    "name": "Okpanam Cultural Center",
+    "address": "Okpanam, Asaba, Delta State",
+    "description": "A cultural hub celebrating local traditions and arts.",
+    "image": "images/okpanam.webp"
+  },
+  {
+    "name": "Asaba Stadium",
+    "address": "Asaba, Delta State",
+    "description": "A sports facility hosting local and regional events.",
+    "image": "images/stadium.webp"
+  },
+  {
+    "name": "Delta Shopping Mall",
+    "address": "Asaba, Delta State",
+    "description": "A modern mall with a variety of shopping and dining options.",
+    "image": "images/shopping_mall.webp"
+  }
+]

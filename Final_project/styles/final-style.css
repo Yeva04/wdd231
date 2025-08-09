@@ -152,14 +152,14 @@ h1, h2 {
     font-size: 1.1rem;
     opacity: 0;
     transition: opacity 180ms ease, transform 150ms ease;
-    pointer-events: none;
+    pointer-events: initial;
 }
 
 /* show buttons when user hovers over carousel */
 .carousel:hover .carousel-btn,
 .carousel:focus-within .carousel-btn {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: initial;
 }
 
 /* small button hover effect */

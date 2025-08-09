@@ -1,5 +1,5 @@
 [
-    {"name": "Chips", "price": 7.50, "category": "snacks", "available": true, "image": "/Final_project/images/Chips.jpeg"},
+    {"name": "Chips", "price": 7.50, "category": "snacks", "available": true, "image": "images/Chips.jpeg"},
     {"name": "Sandwich", "price": 12.00, "category": "snacks", "available": true, "image": "images/sandwich.jpeg"},
     {"name": "Soda", "price": 8.50, "category": "drinks", "available": true, "image": "images/soda.jpg"},
     {"name": "Cookies", "price": 9.00, "category": "snacks", "available": true, "image": "images/cookies.webp"},

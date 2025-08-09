@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal/Service Complaint</title>
+    <link rel="stylesheet" href="styles/final-style.css">
+    <script type="module" src="scripts/complaints-meal.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/snack-on-logo.jpeg" alt="Snack On Logo" class="logo">
+        <nav>
+            <button id="menu-toggle" class="hamburger">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="order.html">ORDER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Meal / Service Complaint</h1>
+        <form id="meal-complaint-form">
+            <label>Name: <input type="text" name="name" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Complaint: <textarea name="issue" required></textarea></label>
+            <button type="submit">Submit Complaint</button>
+        </form>
+
+          <!-- Back to Home link -->
+        <p style="margin-top: 1rem; text-align: center;">
+            <a href="index.html" style="color: #007BFF; text-decoration: underline;">← Back to Home</a>
+        </p>
+    </main>
+    <footer>
+        <p>© <span id="current-year"></span> Snack's On, Asaba Nigeria</p>
+    </footer>
+</body>
+</html>

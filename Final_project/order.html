@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Place your order for delicious snacks and meals with Snack On.">
+    <meta name="author" content="Favour Ojobor">
+    <meta property="og:title" content="Snack On - Order">
+    <meta property="og:description" content="Order your favorite snacks and meals with easy payment options.">
+    <meta property="og:image" content="https://yourusername.github.io/wdd231/final/images/snack-on-logo.png">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/order.html">
+    <title>Snack On - Order</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/final-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial&display=swap">
+    <script type="module" src="scripts/order.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/snack-on-logo.jpeg" alt="Snack On Logo" class="logo">
+        <nav>
+            <button id="menu-toggle" class="hamburger">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="order.html">ORDER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Place Your Order</h2>
+    <form id="order-form">
+    <label for="name">Full Name:
+        <input type="text" id="name" name="name" required aria-label="Full Name">
+    </label>
+    <label for="email">Email:
+        <input type="email" id="email" name="email" required aria-label="Email">
+    </label>
+    <label for="items">Select Meals:
+        <select id="items" name="items" multiple required aria-label="Select Meals">
+            <!-- Dynamically populated by JavaScript -->
+        </select>
+    </label>
+    <label for="address">Delivery Address:
+        <textarea id="address" name="address" required aria-label="Delivery Address"></textarea>
+    </label>
+    <button type="submit">Submit Order</button>
+</form>
+<p style="text-align: center; margin-top:1rem; font-size:0.9rem;">
+    Not satisfied with a meal or service? 
+    <a href="complaints-meal.html" class="complaint-link">Make a complaint</a>
+</p>
+
+    </main>
+    <footer>
+        <p>© <span id="current-year"></span> Snack On, Nigeria | <a href="attributions.html">Attributions</a> | <a href="https://youtu.be/your-video-id" target="_blank">Demo Video</a></p>
+    </footer>
+</body>
+</html>

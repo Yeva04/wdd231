@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let orders = JSON.parse(localStorage.getItem('orders') || '[]');
 
     async function loadMenuOptions() {
+      //here
         try {
             const items = await fetchMenu();
             itemsSelect.innerHTML = ''; // clear dropdown
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const latest = JSON.parse(localStorage.getItem('latestOrder') || 'null');
                 if (latest && !editIndex) prefillForm(latest);
             }
+            //here
         } catch (error) {
             console.error('Error loading menu options:', error);
             itemsSelect.innerHTML = '<option value="">Error loading meals</option>';

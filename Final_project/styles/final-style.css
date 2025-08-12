@@ -18,7 +18,7 @@ body {
 
 header {
     background-color: #4a90e2;
-    color: white;
+    color: #e0e0e0;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -45,8 +45,9 @@ header {
     display: none;
     background: none;
     border: none;
-    color: white;
-    font-size: 1.5rem;
+    color: #e0e0e0;
+    font-size: 1.8rem; /* Increase size to qualify as large text (14pt or 18px) */
+    font-weight: bold; /* Bold for emphasis */
     cursor: pointer;
 }
 
@@ -57,19 +58,34 @@ header {
 }
 
 #primary-nav a {
-    color: white;
+    color: #e0e0e0;
     text-decoration: none;
     padding: 0.5rem;
+    font-size: 1.1rem; /* Ensure readability */
 }
 
 #primary-nav a:hover {
-    color: #ff6200;
+    background-color: #ff6200;
+    border-radius: 5px;
+    color: #d32f2f; /* Ensure active state maintains contrast */
+}
+
+#primary-nav a.active {
+    background-color: #d32f2f;
+    border-radius: 5px;
+    color:#d0d0d0;
 }
 
 main {
     padding: 2rem;
     background-color: #fff;
     flex: 1 0 auto; /* Ensures main takes available space */
+}
+
+main h1 {
+    color: #d32f2f; /* Dark red for contrast on #fff */
+    font-size: 2.5rem; /* Ensure large text */
+    font-weight: bold;
 }
 
 h1, h2 {
@@ -120,31 +136,10 @@ h1, h2 {
     object-fit: cover;
 }
 
-/*
-.carousel-images {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-}
-
-.carousel-slide {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-*/
 
 .carousel-btn {
-    background-color: rgba(74,144,226,0.95);
-    color: white;
+    background-color: #4a90e2;
+    color: #d0d0d0;
     border: none;
     padding: 0.45rem 0.8rem;
     border-radius: 6px;
@@ -165,9 +160,8 @@ h1, h2 {
 /* small button hover effect */
 .carousel-btn:hover {
     transform: scale(1.03);
-    background-color: #ff6200;
+    background-color: #d32f2f;
 }
-
 
 
 #prev-btn {
@@ -249,18 +243,20 @@ h1, h2 {
 .cta {
     display: inline-block;
     background-color: #4a90e2;
-    color: white;
+    color: #d0d0d0;
     padding: 0.75rem 1.25rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-width: 220px; /* prevents too-wide button on large screens */
     text-align: center;
+    transition: background-color 0.3s;
 }
 
 .cta:hover {
-    background-color: #ff6200;
+    background-color: #d32f2f;
+    color: #d0d0d0;
 }
 
 @media (max-width: 600px) {
@@ -397,7 +393,7 @@ form button:hover {
 
 footer {
     background-color: #4a90e2;
-    color: white;
+    color: #d0d0d0;
     text-align: center;
     padding: 1rem;
     width: 100%;
@@ -406,7 +402,7 @@ footer {
 }
 
 footer a {
-    color: #ff6200;
+    color: #d32f2f;
     text-decoration: none;
 }
 
@@ -465,10 +461,7 @@ footer a:hover {
     }
 }
 
-#primary-nav a.active {
-    background-color: #ff6200;
-    border-radius: 5px;
-}
+
 
 .item-grid {
     display: grid;

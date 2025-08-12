@@ -139,12 +139,13 @@ h1, h2 {
 
 .carousel-btn {
     background-color: #4a90e2;
-    color: #d0d0d0;
+    color: #000000;
     border: none;
     padding: 0.45rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1rem;
+    font-weight: bold;
     opacity: 0;
     transition: opacity 180ms ease, transform 150ms ease;
     pointer-events: initial;
@@ -393,16 +394,17 @@ form button:hover {
 
 footer {
     background-color: #4a90e2;
-    color: #d0d0d0;
+    color: #000000;
     text-align: center;
     padding: 1rem;
     width: 100%;
+    font-size: 1.2rem;;
     flex-shrink: 0; /* Prevents footer from shrinking */
     clear: both; /* Clears any floated elements */
 }
 
 footer a {
-    color: #d32f2f;
+    color: #000000;
     text-decoration: none;
 }
 

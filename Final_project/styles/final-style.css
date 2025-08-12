@@ -40,6 +40,19 @@ header {
     transform: scale(2.0);
 }
 
+.hamburger {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.75rem;
+    margin-right: 1.5rem;
+}
+
+.hamburger:focus {
+    outline: 1px solid #ff6200;
+}
 
 #menu-toggle {
     display: none;
@@ -65,21 +78,29 @@ header {
 }
 
 #primary-nav a:hover {
-    background-color: #ff6200;
+    background-color: #d32f2f;
     border-radius: 5px;
-    color: #d32f2f; /* Ensure active state maintains contrast */
+    color: #ffffff; /* Ensure active state maintains contrast */
 }
 
 #primary-nav a.active {
     background-color: #d32f2f;
     border-radius: 5px;
-    color:#d0d0d0;
+    color:#ffffff;
 }
 
 main {
     padding: 2rem;
     background-color: #fff;
     flex: 1 0 auto; /* Ensures main takes available space */
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+main p {
+    text-align: center; /* Center the text */
+    max-width: 600px; /* Optional for readability */
+    margin-bottom: 2rem;
 }
 
 main h1 {
@@ -135,7 +156,6 @@ h1, h2 {
     display: block;
     object-fit: cover;
 }
-
 
 .carousel-btn {
     background-color: #4a90e2;
@@ -210,6 +230,13 @@ h1, h2 {
     transform: scale(1.05);
 }
 
+/* Existing styles */
+.item-list img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
 .categories {
     margin-bottom: 2rem;
 }
@@ -242,7 +269,8 @@ h1, h2 {
 }
 
 .cta {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     background-color: #4a90e2;
     color: #d0d0d0;
     padding: 0.75rem 1.25rem;
@@ -490,6 +518,8 @@ footer a:hover {
     height: 120px;
     object-fit: cover;
     border-radius: 6px;
+    max-width: 100%; /* Replace inline style */
+    height: auto; /* Replace inline style */
 }
 
 .menu-card h3 {

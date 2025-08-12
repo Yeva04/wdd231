@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = item.image;
             img.alt = item.name;
+            img.loading = 'lazy'; // Added lazy loading
 
             const title = document.createElement('h3');
             title.textContent = item.name;

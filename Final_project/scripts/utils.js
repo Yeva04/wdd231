@@ -1,3 +1,4 @@
+// scripts/utils.js
 export async function fetchMenu() {
     const response = await fetch('data/menu.json');
     if (!response.ok) throw new Error('Network response was not ok');
@@ -24,7 +25,6 @@ export function filterItems(items, category) {
     return category === 'all' ? items : items.filter(item => item.category === category);
 }
 
-/* ---------- Modal helper ---------- */
 export function showModal(content, callback) {
     const modal = document.createElement('div');
     modal.className = 'modal';
@@ -46,12 +46,12 @@ export function showModal(content, callback) {
     });
 
     if (callback) {
+        // run callback after DOM insertion (so caller can query elements)
         setTimeout(() => callback(modal), 0);
     }
     return modal;
 }
 
-/* ---------- Robust Carousel (sliding track) ---------- */
 export function loadCarousel() {
     const carousel = document.getElementById('carousel');
     if (!carousel) {
@@ -63,8 +63,9 @@ export function loadCarousel() {
         'snack1.jpeg',
         'snack2.jpg',
         'snack3.jpeg'
-    ];
+    ]; // <-- ensure these filenames exactly match files in /images (case-sensitive)
 
+    // Build DOM
     carousel.innerHTML = `
         <button id="prev-btn" class="carousel-btn" aria-label="Previous">←</button>
         <div class="carousel-viewport">
@@ -76,6 +77,7 @@ export function loadCarousel() {
     const viewport = carousel.querySelector('.carousel-viewport');
     const track = carousel.querySelector('.carousel-track');
 
+    // create slides
     let loadedCount = 0;
     images.forEach(src => {
         const slide = document.createElement('div');
@@ -85,16 +87,20 @@ export function loadCarousel() {
         const img = document.createElement('img');
         img.src = `images/${src}`;
         img.alt = 'Snack item';
-        img.loading = 'lazy'; // Ensured lazy loading
+        img.loading = 'lazy';
 
+        // fallback on error
         img.addEventListener('error', () => {
             console.warn('Carousel image failed to load:', img.src);
-            img.src = 'images/placeholder.png';
+            img.src = 'images/placeholder.png'; // add a placeholder.png in /images
         });
 
         img.addEventListener('load', () => {
             loadedCount++;
-            if (loadedCount === images.length) updateSizes();
+            // when all images loaded, set sizing
+            if (loadedCount === images.length) {
+                updateSizes();
+            }
         });
 
         slide.appendChild(img);
@@ -110,6 +116,7 @@ export function loadCarousel() {
     let slideWidth = 0;
 
     function updateSizes() {
+        // compute viewport width and size slides accordingly
         slideWidth = viewport.clientWidth;
         Array.from(slides).forEach(slide => {
             slide.style.flex = `0 0 ${slideWidth}px`;
@@ -132,7 +139,9 @@ export function loadCarousel() {
 
     function startAutoScroll() {
         stopAutoScroll();
-        intervalId = setInterval(() => moveTo(currentIndex + 1), 2000);
+        intervalId = setInterval(() => {
+            moveTo(currentIndex + 1);
+        }, 2000);
     }
     function stopAutoScroll() {
         if (intervalId) clearInterval(intervalId);

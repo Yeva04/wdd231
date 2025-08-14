@@ -1,3 +1,5 @@
+/* Existing styles remain unchanged until new additions */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 header {
@@ -55,8 +58,8 @@ header {
     background: none;
     border: none;
     color: #e0e0e0;
-    font-size: 1.8rem; /* Increase size to qualify as large text (14pt or 18px) */
-    font-weight: bold; /* Bold for emphasis */
+    font-size: 1.8rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -70,50 +73,43 @@ header {
     color: #ffffff;
     text-decoration: none;
     padding: 0.5rem;
-    font-size: 1.1rem; /* Ensure readability */
+    font-size: 1.1rem;
 }
 
 #primary-nav a:hover {
     background-color: #889fc1;
     border-radius: 8px;
-    color: #ffffff; /* Ensure active state maintains contrast */
+    color: #ffffff;
 }
 
 #primary-nav a.active {
     background-color: #fc5e09;
     border-radius: 8px;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 main {
     padding: 2rem;
     background-color: #fff;
-    flex: 1 0 auto; /* Ensures main takes available space */
+    flex: 1 0 auto;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
 }
 
 main > p {
-    text-align: center !important; /* Center the text */
-    max-width: 600px; /* Optional for readability */
-    margin: 0 auto 2rem; /* Center horizontally and add bottom margin */
-    padding: 0 1rem; /* Prevent text from touching edges on small screens */
+    text-align: center !important;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
 }
 
 main h1, h2 {
-    color: #fc5e09; /* Dark red for contrast on #fff */
-    font-size: 2rem; /* Ensure large text */
+    color: #fc5e09;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
+}
 
-}
-/*
-h1, h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #d32f2f;
-}
-*/
 .carousel {
     display: flex;
     align-items: center;
@@ -125,7 +121,6 @@ h1, h2 {
     position: relative;
 }
 
-/* viewport that hides overflow */
 .carousel-viewport {
     overflow: hidden;
     width: 100%;
@@ -133,13 +128,11 @@ h1, h2 {
     border-radius: 6px;
 }
 
-/* track that holds slides in a row */
 .carousel-track {
     display: flex;
     will-change: transform;
 }
 
-/* each slide is a container for the img */
 .carousel-slide {
     flex: 0 0 100%;
     display: flex;
@@ -148,7 +141,6 @@ h1, h2 {
     box-sizing: border-box;
 }
 
-/* img takes available slide area */
 .carousel-slide img {
     width: 100%;
     height: auto;
@@ -170,19 +162,16 @@ h1, h2 {
     pointer-events: initial;
 }
 
-/* show buttons when user hovers over carousel */
 .carousel:hover .carousel-btn,
 .carousel:focus-within .carousel-btn {
     opacity: 1;
     pointer-events: initial;
 }
 
-/* small button hover effect */
 .carousel-btn:hover {
     transform: scale(1.03);
     background-color: #fc5e09;
 }
-
 
 #prev-btn {
     margin-right: 1rem;
@@ -229,7 +218,6 @@ h1, h2 {
     transform: scale(1.05);
 }
 
-/* Existing styles */
 .item-list img {
     max-width: 100%;
     height: auto;
@@ -277,7 +265,7 @@ h1, h2 {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    max-width: 220px; /* prevents too-wide button on large screens */
+    max-width: 220px;
     text-align: center;
     transition: background-color 0.3s;
 }
@@ -294,7 +282,6 @@ h1, h2 {
         margin: 1rem auto;
     }
 }
-
 
 form {
     display: flex;
@@ -348,18 +335,7 @@ form button {
 form button:hover {
     background-color: #ff6200;
 }
-/*
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1001;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-*/
+
 .modal.open {
     display: flex;
     animation: modalFade 220ms ease;
@@ -373,27 +349,23 @@ form button:hover {
 .modal-content {
     background: #fff;
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     max-width: 640px;
-    width: 96%;
+    width: 90%;
     position: relative;
     margin: 0 auto;
     display: block;
+    text-align: center;
 }
 
+/* Remove conflicting close button style */
 .modal-content .close {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    background: none;
-    border: none;
-    font-size: 1.3rem;
-    cursor: pointer;
+    display: none;
 }
 
 .modal-content button {
-  padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     margin: 0.5rem;
     background-color: #042c5b;
     color: white;
@@ -402,33 +374,41 @@ form button:hover {
     cursor: pointer;
 }
 
-
 .modal-content button:hover {
     background-color: #ff6200;
 }
 
 .close {
     position: absolute;
-    top: 10px; /* Adjusted for better positioning */
-    right: 10px; /* Adjusted for better positioning */
-    font-size: 1.5rem;
+    top: 0;
+    right: 1px;
+    font-size: 2rem;
     cursor: pointer;
-    color: #fff; /* White text for contrast */
-    background-color: #042c5b; /* Blue background */
+    color: #fff;
+    background-color: #042c5b;
     border: none;
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    line-height: 30px;
+    line-height: 15px;
     text-align: center;
-    transition: background-color 0.3s;
-    padding: 0; /* Remove default padding */
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+    visibility: hidden; /* Default hidden state */
+    opacity: 0; /* Default hidden state */
+    padding: 0;
+    z-index: 1001;
+    display: block !important; /* Ensure it’s not hidden by display */
 }
 
+/* Ensure close button appears on modal hover */
+.modal:hover .close {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 
 .close:hover {
-    background-color: #fc5e09; /* Orange hover */
-    color: #fff; /* Ensure text remains visible */
+    background-color: #fc5e09;
+    color: #fff;
 }
 
 footer {
@@ -437,9 +417,11 @@ footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    font-size: 1.2rem;;
-    flex-shrink: 0; /* Prevents footer from shrinking */
-    clear: both; /* Clears any floated elements */
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    clear: both;
+    position: relative;
+    z-index: 1;
 }
 
 footer a {
@@ -497,9 +479,18 @@ footer a:hover {
         padding: 1.5rem;
     }
     .modal-content {
-        margin: 15% auto;
         width: 90%;
+        max-width: 460px;
+        margin: 2% auto;
+        text-align: center;
+        border-radius: 15px;
+        
     }
+    #modal-container {
+        min-height: 300px;
+    }
+
+
 }
 
 .item-grid {
@@ -527,8 +518,8 @@ footer a:hover {
     height: 120px;
     object-fit: cover;
     border-radius: 6px;
-    max-width: 100%; /* Replace inline style */
-    height: auto; /* Replace inline style */
+    max-width: 100%;
+    height: auto;
 }
 
 .menu-card h3 {
@@ -547,7 +538,6 @@ main .complaint-text {
     font-size: 0.9rem;
 }
 
-
 .back-to-home {
     display: block;
     text-align: center;
@@ -556,76 +546,34 @@ main .complaint-text {
     text-decoration: none;
 }
 
-
 .back-to-home:hover {
     text-decoration: underline;
 }
 
-/* Hide back to home link on large screens for complaints pages */
 @media (min-width: 769px) {
     .back-to-home {
         display: none;
     }
 }
 
-/* Ensure modal appears below details */
 #modal-container {
     margin-top: 1rem;
     position: relative;
-    min-height: 100px; /* Ensure space for modal */
+    min-height: 100px;
 }
 
 .modal {
     position: absolute;
-    top: 170px;
+    top: 1px;
     left: 50%;
-    transform: translateX(-20%);
+    transform: translateX(-50%);
     background: none;
     padding: 0;
-    border: none;
-    box-shadow:none;
-    width: 60%;
-    max-width: 640px;
+    box-shadow: 0 0 5px #fc5e09;
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
     z-index: 1000;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    max-width: 640px;
-    width: 96%;
-    margin: 0 auto;
-    position: relative;
-    display: block; /* Ensure it behaves as a block element */
-}
-
-.modal.open {
-    display: block; 
-}
-
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-    background-color: #042c5b; 
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    transition: background-color 0.3s;
-    padding: 0;
-}
-
-.close:hover {
-    background-color: #fc5e09;
-    color: #fff;
+    display: block;
+    pointer-events: auto;
 }

@@ -25,29 +25,41 @@ export function filterItems(items, category) {
     return category === 'all' ? items : items.filter(item => item.category === category);
 }
 
-export function showModal(content, callback) {
+export function showModal(content, callback, appendTo = document.body) {
     const modal = document.createElement('div');
     modal.className = 'modal';
-    modal.innerHTML = `
+    // Ensure close button is explicitly included
+    const modalContent = `
         <div class="modal-content" role="dialog" aria-modal="true">
             <button class="close" aria-label="Close">&times;</button>
             ${content}
         </div>
     `;
-    document.body.appendChild(modal);
+    modal.innerHTML = modalContent;
 
-    // Use CSS class to make it visible (so CSS animations can run)
+    // Debug: Log the modal HTML to confirm the close button
+    console.log('Modal HTML:', modal.innerHTML);
+
+    appendTo.appendChild(modal);
+
+    // Use CSS class to make it visible
     requestAnimationFrame(() => modal.classList.add('open'));
 
     const closeBtn = modal.querySelector('.close');
-    closeBtn.addEventListener('click', () => modal.remove());
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.remove());
+        // Ensure initial visibility for debugging
+        closeBtn.style.visibility = 'visible'; // Temporary to confirm rendering
+        closeBtn.style.opacity = '1'; // Temporary to confirm rendering
+    } else {
+        console.error('Close button not found in modal content');
+    }
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.remove();
     });
 
     if (callback) {
-        // run callback after DOM insertion (so caller can query elements)
-        setTimeout(() => callback(modal), 0);
+        setTimeout(() => callback(modal.querySelector('.modal-content')), 0);
     }
     return modal;
 }
@@ -63,9 +75,8 @@ export function loadCarousel() {
         'snack1.jpeg',
         'snack2.jpg',
         'snack3.jpeg'
-    ]; // <-- ensure these filenames exactly match files in /images (case-sensitive)
+    ];
 
-    // Build DOM
     carousel.innerHTML = `
         <button id="prev-btn" class="carousel-btn" aria-label="Previous">←</button>
         <div class="carousel-viewport">
@@ -77,7 +88,6 @@ export function loadCarousel() {
     const viewport = carousel.querySelector('.carousel-viewport');
     const track = carousel.querySelector('.carousel-track');
 
-    // create slides
     let loadedCount = 0;
     images.forEach(src => {
         const slide = document.createElement('div');
@@ -89,15 +99,13 @@ export function loadCarousel() {
         img.alt = 'Snack item';
         img.loading = 'lazy';
 
-        // fallback on error
         img.addEventListener('error', () => {
             console.warn('Carousel image failed to load:', img.src);
-            img.src = 'images/placeholder.png'; // add a placeholder.png in /images
+            img.src = 'images/placeholder.png';
         });
 
         img.addEventListener('load', () => {
             loadedCount++;
-            // when all images loaded, set sizing
             if (loadedCount === images.length) {
                 updateSizes();
             }
@@ -116,7 +124,6 @@ export function loadCarousel() {
     let slideWidth = 0;
 
     function updateSizes() {
-        // compute viewport width and size slides accordingly
         slideWidth = viewport.clientWidth;
         Array.from(slides).forEach(slide => {
             slide.style.flex = `0 0 ${slideWidth}px`;

@@ -12,19 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('items').textContent = params.get('items') || 'N/A';
     document.getElementById('address').textContent = params.get('address') || 'N/A';
 
-    // Show modal below order details as a success popup
+    // Show modal with Change and Cancel options
     const modalContainer = document.getElementById('modal-container');
     if (modalContainer && orderIndex !== null) {
         showModal(`
             <h3>Order Successfully Placed!</h3>
-            <p>Your order has been received. Thank you!</p>
+            <p>Would you like to change or cancel your order?</p>
+            <button id="cancel-order">Cancel Order</button>
+            <button id="change-order">Change Order</button>
         `, (modalContent) => {
             const modal = modalContent.parentElement;
-            modalContainer.appendChild(modal);
+            // Debug: Log the modal content to confirm structure
+            console.log('Modal Content:', modal.innerHTML);
 
-            // Optional: Auto-close after 3 seconds
-            setTimeout(() => modal.remove(), 3000);
-        });
+            const cancelButton = modalContent.querySelector('#cancel-order');
+            const changeButton = modalContent.querySelector('#change-order');
+
+            cancelButton.addEventListener('click', () => {
+                console.log('Cancel button clicked, removing modal');
+                modal.remove();
+                console.log('Redirecting to complaints.html');
+                window.location.href = './complaints.html';
+            });
+
+            changeButton.addEventListener('click', () => {
+                console.log('Change button clicked, removing modal');
+                modal.remove();
+                console.log('Redirecting to order.html with editIndex:', orderIndex);
+                window.location.href = `./order.html?editIndex=${orderIndex}`;
+            });
+        }, modalContainer);
     } else {
         console.error('Modal container not found or no orders exist');
     }

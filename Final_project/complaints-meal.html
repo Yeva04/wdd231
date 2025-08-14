@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal/Service Complaint</title>
-    <link rel="icon" type="image/x-icon" href="/Final_project/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"> <!-- Fixed path -->
     <link rel="stylesheet" href="styles/final-style.css">
     <script type="module" src="scripts/complaints-meal.js"></script>
 </head>
@@ -28,11 +28,7 @@
             <label>Complaint: <textarea name="issue" required></textarea></label>
             <button type="submit">Submit Complaint</button>
         </form>
-
-          <!-- Back to Home link -->
-        <p style="margin-top: 1rem; text-align: center;">
-            <a href="index.html" style="color: #007BFF; text-decoration: underline;">← Back to Home</a>
-        </p>
+        <a href="index.html" class="back-to-home">← Back to Home</a>
     </main>
     <footer>
         <p>© <span id="current-year"></span> Snack's On, Asaba Delta Nigeria | 

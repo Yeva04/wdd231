@@ -22,5 +22,10 @@
     {"name": "Cocktail", "price": 12.00, "category": "drinks", "available": false, "image": "images/cock.jpg"},
     {"name": "Egusi", "price": 20.00, "category": "meals", "available": false, "image": "images/Egusi.jpeg"},
     {"name": "Fried Rice", "price": 18.00, "category": "meals", "available": false, "image": "images/fried-rice.webp"},
+    {"name": "Peppered Turkey", "price": 20.00, "category": "meals", "available": false, "image": "images/turkey.jpg"},
+    {"name": "Peppered Chicken", "price": 20.00, "category": "meals", "available": false, "image": "images/chicken.jpg"},
+    {"name": "Potatoes", "price": 20.00, "category": "meals", "available": false, "image": "images/potatoes.jpg"},
+    {"name": "Yam", "price": 20.00, "category": "meals", "available": false, "image": "images/yam.jpg"},
+    {"name": "Hot Dog", "price": 20.00, "category": "snacks", "available": false, "image": "images/hot_dog.jpg"},
     {"name": "Pretzels", "price": 2.00, "category": "snacks", "available": false, "image": "images/pretzels.jpeg"}
 ]

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Snack On - Complaints</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Submit your complaint about a meal or service from Snack On.">
+    <title>Snack On - Order Confirmation</title>
+    <meta name="description" content="Confirmation of your order at Snack On.">
     <meta name="author" content="Favour Ojobor">
-    <meta property="og:title" content="Snack On - Complaints">
-    <meta property="og:description" content="Let us know if you had any issues with our meals or service.">
-    <meta property="og:image" content="https://yourusername.github.io/wdd231/final/images/snack-on-logo.png">
-    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/complaints.html">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/final-style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial&display=swap">
-    <script type="module" src="scripts/complaints.js"></script>
+    <script type="module" src="scripts/order-action.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,20 +24,15 @@
         </nav>
     </header>
     <main>
-        <h2>Cancel Order</h2>
-        <form id="complaint-form">
-            <label for="name">Full Name:
-                <input type="text" id="name" name="name" required>
-            </label>
-            <label for="email">Email:
-                <input type="email" id="email" name="email" required>
-            </label>
-            <label for="complaint">Reason for cancellation:
-                <textarea id="complaint" name="complaint" required></textarea>
-            </label>
-            <button type="submit">Submit</button>
-        </form>
-        <a href="index.html" class="back-to-home">← Back to Home</a>
+        <h2>Order Confirmation</h2>
+        <div id="order-details">
+            <p>Full Name: <span id="name"></span></p>
+            <p>Email Address: <span id="email"></span></p>
+            <p>You Ordered: <span id="items"></span></p>
+            <p>Delivery Address: <span id="address"></span></p>
+        </div>
+        <div id="modal-container"></div>
+        <a href="index.html" class="back-to-home">Back to Home</a>
     </main>
     <footer>
         <p>© <span id="current-year"></span> Snack's On, Asaba Delta Nigeria | 
